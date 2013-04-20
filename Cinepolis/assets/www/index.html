@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <title>Cinepolis</title>
+
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <link rel="stylesheet" type="text/css" href="css/themes/default/jquery.mobile-1.3.0.css" />
+        <link rel="shortcut icon" href="docs/favicon.ico">
+        <!--<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700"> -->
+
+        <script type="text/javascript" src="cordova-2.4.0.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="js/jquery.js"></script>
+        <script type="text/javascript" src="js/jquery.mobile-1.3.0.js"></script>
+        <script type="text/javascript">
+            app.initialize();
+            
+           <!-- function loadMain(){
+               $.mobile.loading("show",{textVisible:false,theme:"c"});
+                 borramos elementos de la lista
+                $("#list_ciudades").children().remove("li");
+            
+                 pedimos al servidor lista de ciudades
+                $.ajax({
+                   type:"GET",
+                   url:"http://api.lesthack.com.mx/cinepolis/ciudades_complejos.json",
+                   async: false,
+                   jsonpCallback: "jsonCallback",
+                   contentType: "application/json",
+                   dataType: "jsonp",
+                   success:function(data_json){
+                        console.log(data_json);
+                   },
+                   error: function(err){
+                       console.log("Error: "+err);
+                   }
+                });
+                 
+            }
+            
+            
+            $(function(){
+                   $.mobile.changePage($("#ciudades"));
+                   loadMain();
+            });   -->
+            
+        </script>
+
+    </head>
+    <body>
+           <div data-role="page" id="ciudades">
+                <div data-role="header" data-theme="c" data-position="fixed">
+                     <h2>Cinepolis</h2>
+                </div>
+                
+                <div data-role="content">
+                     <ul data-role="listview" data-inset="true" id="list_ciudades" data-filter="true">    <!-- data-inset:no se expanda en la pantalla y el filter aparece en de buscar-->
+                         <li><a href="#complejos">Ciudad 1</a></li>
+                         <li><a href="#complejos">Ciudad 2</a></li>
+                     </ul>
+                </div>
+                
+                <div data-role="footer" data-theme="c" data-position="fixed">
+                     <h2>Cinepolis</h2>
+                </div>
+           </div>
+           
+           
+           <div data-role="page" id="complejos">
+                <div data-role="header" data-theme="c" data-position="fixed">
+                     <h2>Complejos</h2>
+                     <a href="#" data-role="button" data-icon="back" data-iconpos="notext" data-rel="back" class="ui-btn-right"> back</a>
+                </div>
+
+                <div data-role="content">
+                     <ul data-role="listview" data-inset="true" data-filter="true">    <!-- data-inset:no se expanda en la pantalla y el filter aparece en de buscar-->
+                         <li><a href="#cartelera">Complejo 1</a></li>
+                         <li><a href="#cartelera">Complejo 2</a></li>
+                     </ul>
+                </div>
+                
+                <div data-role="footer" data-theme="c" data-position="fixed">
+                     <h2>Cinepolis</h2>
+                </div>
+           </div>
+           
+           
+           <div data-role="page" id="cartelera">
+                <div data-role="header" data-theme="c" data-position="fixed">
+                     <h2>Cartelera</h2>
+                     <a href="#" data-role="button" data-icon="back" data-iconpos="notext" data-rel="back" class="ui-btn-right"> back</a>
+                </div>
+
+                <div data-role="content">
+                     <ul data-role="listview" data-inset="true" data-filter="true">    <!-- data-inset:no se expanda en la pantalla y el filter aparece en de buscar-->
+                         <li>
+                             <a href="#">
+                                <img src="img/cordova.png"/>
+                                <h2>Titulo 1  </h2>
+                                <p>Descripcion</p>
+                             </a>
+                         </li>
+                         
+                         <li>
+                             <a href="#">
+                                <img src="img/cordova.png"/>
+                                <h2>Titulo 2 </h2>
+                                <p>Descripcion</p>
+                             </a>
+                         </li>
+                         
+                     </ul>
+                </div>
+
+                <div data-role="footer" data-theme="c" data-position="fixed">
+                     <h2>Cinepolis</h2>
+                </div>
+           </div>
+                
+                
+    </body>
+</html>
+
